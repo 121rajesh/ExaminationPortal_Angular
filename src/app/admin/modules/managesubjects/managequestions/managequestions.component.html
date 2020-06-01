@@ -1,0 +1,99 @@
+
+  
+<br><br><br><br>
+ 
+<div class="bg-img">
+  <h1>Manage Questions</h1>
+ 
+  <div class="content">        
+     
+       <table style="text-align:left;">
+           <tr>
+               <td>
+                <b>Subject Name</b>
+               </td>
+               <td style="width: 400px;">
+                <div class="form-group">
+                    <input type="text" readonly class="form-control" id="subId" value={{this.subject.subName}}>
+                  </div>           
+               </td>
+           </tr>
+           
+            <tr>
+                <td colspan="2"><a style="color: white;" routerLink="/admin/modules/managesubjects"><b>Back to Manage-sub</b></a></td>
+                
+            </tr>
+          
+       </table>
+    </div>
+
+    <div class="content1">
+            <h3>Added Questions</h3>
+               <!-- <ul>
+                <li>
+                    Question 1
+                </li>
+                <li>
+                    Question 2
+                </li>
+                <li>
+                    Question 3
+                </li>
+            </ul> -->
+            <div *ngFor="let ques of questions;index as i">
+             <button type="button" (click)="editQuestion(ques)">Question {{i+1}}</button>
+             
+            </div>
+    </div>
+
+    <div class="content2">
+      
+      <form #myFrom ="ngForm" (ngSubmit)="addQues(myFrom)"> 
+        <label for="question"><b>Question</b></label>
+        <input ngModel type="text"  name="question" required class="form-control" >
+    
+        <label for="opt1"><b>Opt 1</b></label>
+        <input ngModel type="text"  name="opt1" required class="form-control" >
+        <label for="opt2"><b>Opt 2</b></label>
+        <input ngModel type="text"  name="opt2" required class="form-control" >
+        <label for="opt3"><b>Opt 3</b></label>
+        <input ngModel type="text"  name="opt3" required class="form-control" >
+        <label for="opt4"><b>Opt 4</b></label>
+        <input ngModel type="text"  name="opt4" required class="form-control" >
+        <label for="correctAns"><b>Correct Ans</b></label>
+        <input ngModel type="text"  name="correctAns" required class="form-control" ><br>
+        <div style="padding-left: 200px;">
+           <button type="submit" class="btn btn-success">Submit</button>
+           
+        </div>
+        </form>
+        
+    </div>
+    <div class="content2" *ngIf="this.editQues">
+      <form #myFrom ="ngForm" (ngSubmit)="updateQues(myFrom.value)"> 
+              <label for="question"><b>Question</b></label>
+              <input [(ngModel)]="this.specificQues.question" type="text"  name="question" required class="form-control" >
+                
+              <label for="opt1"><b>Opt 1</b></label>
+              <input [(ngModel)]="this.specificQues.opt1" type="text"  name="opt1" required class="form-control" >
+              <label for="opt2"><b>Opt 2</b></label>
+              <input [(ngModel)]="this.specificQues.opt2" type="text"  name="opt2" required class="form-control" >
+              <label for="opt3"><b>Opt 3</b></label>
+              <input [(ngModel)]="this.specificQues.opt3" type="text"  name="opt3" required class="form-control" >
+              <label for="opt4"><b>Opt 4</b></label>
+              <input [(ngModel)]="this.specificQues.opt4" type="text"  name="opt4" required class="form-control" >
+              <label for="correctAns"><b>Correct Ans</b></label>
+              <input [(ngModel)]="this.specificQues.correctAns" type="text"  name="correctAns" required class="form-control" ><br>
+              <div style="padding-left: 200px;">
+                 <button type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <button type="button" (click)="cancel()" class="btn btn-danger">Cancel</button>
+              </div>
+              
+              </form>
+      </div>
+</div>
+<br><br><br>
+
+  
+  
+ 

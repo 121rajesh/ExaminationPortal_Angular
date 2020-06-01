@@ -1,0 +1,32 @@
+<!-- <p>dashboard works!</p>
+<br>
+<br>
+<br>
+
+<h1>user dashboard</h1>
+ --> 
+ 
+<br><br><br>
+    <div class="bg-img"><br>
+       <h1 style="color: white; padding-left: 20px;">Feedback</h1>
+       <div class="content">
+            
+        <form #myform="ngForm" (ngSubmit)="addfeedback(myform.form.value)">            
+          <div class="form-group">
+            <textarea name="" id="input" class="form-control" rows="7" name="message" [(ngModel)]="message" minlength="10" maxlength="250" placeholder="your precious feedback if any," #feedback="ngModel" #spy required></textarea>
+          </div>
+          <div *ngIf="feedback.dirty">
+            <div *ngIf="feedback.errors.required" class="alert alert-danger">
+              Feedback cannot be blank. 
+            </div>
+            <div *ngIf="feedback.errors.minlength">
+              Feedback must be alteast 10 characters long
+            </div>
+          </div>
+          <button *ngIf="feedback.errors.required || feedback.errors.minlength" type="submit" class="btn btn-primary" [disabled]="checked" >Submit</button>
+        </form>
+            
+       </div>
+    </div>
+   
+ 

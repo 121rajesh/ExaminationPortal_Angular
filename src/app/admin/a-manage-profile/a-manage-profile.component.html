@@ -1,0 +1,90 @@
+
+  <!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" routerLink ="/home">Shiksha</a>
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a class = "nav-link" routerLink ="/admin/dashboard">DashBoard</a>
+      </li>
+      <li class="active">
+        <a class = "nav-link" routerLink ="/home">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Modules
+        </a> 
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink ="/admin/modules/managesubjects">Manage Subjects</a>
+          <a class="dropdown-item" routerLink ="/admin/modules/addsubject">Add Subject</a>
+        </div>
+      </li> 
+      <li class="active">
+        <a class = "nav-link" routerLink ="/admin/users">Users</a>
+      </li> 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Exams
+        </a> 
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink ="/admin/exam/results">Results</a>
+          
+        </div>
+      </li>
+      <li class="active">
+        <a class = "nav-link" routerLink ="/admin/feedback">Feedback</a>
+      </li>
+      <li class="active">
+        <a class = "nav-link" routerLink ="/admin/manageprofile">Manage Profile</a>
+      </li> 
+    </ul> 
+    <ul style="padding-left: 532px;">
+      <div>
+       <img src="assets/images/avt1.jpg" alt="Avatar" class="avatar" >
+      </div>
+    </ul>
+    <ul class="nav navbar-right">
+        <li>
+            <a class="nav-link" routerLink="/login">Logout</a>
+        </li>
+    </ul>
+    
+ 
+  </nav>  -->
+
+<br><br><br>
+
+
+<div class="bg-img">
+  <br>
+ <h1 style="color: white; padding-left: 20px;">Admin's profile mgmnt</h1>
+
+ <div class="content">        
+    <form #myFrom ="ngForm" (ngSubmit)="update(myFrom.value)"> 
+       <label for="name"><b>Name</b></label>
+       <input [(ngModel)]="userObj.name" type="text"  name="name" required class="form-control" >
+   
+       <label for="emailId"><b>Email</b></label>
+       <input [(ngModel)]="userObj.emailId" readonly type="email"  name="emailId" required class="form-control" ><br>
+       
+       <label for="mobileNo"><b>Mobile No</b></label>
+       <input [(ngModel)]="userObj.mobile" readonly type="number"  name="mobile" required class="form-control" ><br>
+
+       <label for="password"><b>Current Password</b></label>
+       <input ngModel type="password" name="password" required class="form-control" >
+       
+       <label for="NewPassword"><b>New Password</b></label>
+       <input ngModel type="password" name="NewPassword" required class="form-control" >
+     
+       <label for="CnPassword"><b>Confirm Password</b></label>
+       <input ngModel type="password" name="CnfPassword" required class="form-control" > <br>
+       <div style="padding-left: 450px;">
+          <button type="submit" class="btn btn-success">Submit</button>
+       </div>
+       
+     
+         <span>
+             {{message}}
+         </span>
+</form>
+  
+</div>
+</div>

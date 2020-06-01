@@ -1,0 +1,39 @@
+<div class="sidebar">
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let sub of subjects">
+
+                <td style="text-align: center;"><button class="btn btn-primary" style="width: 150px;"
+                        (click)="displayPaper(sub.subId)">{{sub.subName}}</button>
+            <tr>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="sidenav-content" *ngIf="this.showPaper">
+    <div style="opacity: 1; transition: all 200ms ease-in-out 0s;">
+        <div class="content">
+            <table class="table">
+
+                <tbody *ngFor="let ques of questions;index as i">
+                    <ng-container >
+
+                        <tr>
+                            <td colspan="4" scope="row">{{i+1}}) {{ques.question}}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">A] {{ques.opt1}}</td>
+                            <td>B] {{ques.opt2}}</td>
+                            <td>C] {{ques.opt3}}</td>
+                            <td>D] {{ques.opt4}}</td>
+                        </tr>
+                        </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

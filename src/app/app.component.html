@@ -1,0 +1,140 @@
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top " >
+  <a class="navbar-brand" routerLink ="/home">Shiksha</a>
+  <ul class="nav navbar-nav">
+    <li class="active">
+      <a class = "nav-link" routerLink ="/home">Home</a>
+    </li>
+    <li class="active">
+      <a class = "nav-link" routerLink ="/exam">Exam</a>
+    </li>
+    <li class="active">
+      <a class = "nav-link" routerLink ="/about">About us</a>
+    </li>
+    <li class="active">
+      <a class = "nav-link" routerLink ="/contact">Contact us</a>
+    </li>
+  </ul>
+  <ul class="nav navbar-right">
+    <li class="navbar-brand active" *ngIf="!this.AuthService.isLoggedIn()" style="padding-left: 870px;" >
+      <a class="nav-link" routerLink="/login">Login</a>
+    </li>
+
+  </ul>
+
+</nav>
+
+<div *ngIf="this.AuthService.isLoggedIn()">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top" >
+    <a class="navbar-brand" routerLink ="/home">Shiksha</a>
+    <ul class="nav navbar-nav">
+     <li class="active">
+        <a class = "nav-link" routerLink ="/home">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Online Test
+        </a> 
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+            <div *ngFor="let sub of subjects">
+            <a style="color: black;" class="dropdown-item" routerLink="/user/exam/{{sub.subId}}">{{sub.subName}}</a>
+          </div> 
+        </div>
+      </li>
+      <li class="active"> 
+        <a class = "nav-link" routerLink ="/user/samplepapers">Sample papers</a>
+      </li>
+      <li class="active">
+        <a class = "nav-link" routerLink ="/user/performance">Performance</a>
+      </li>
+      <li class="active">
+        <a class = "nav-link" routerLink ="/user/feedback">Feedback</a>
+      </li>
+      <li class="active">
+        <a class = "nav-link" routerLink ="/user/manageprofile">Manage Profile</a>
+      </li>
+
+    </ul>
+    <ul style="padding-left: 480px;">
+      <div>
+       <img src="assets/images/avt1.jpg" alt="Avatar" class="avatar" >
+      </div>
+    </ul>
+    <ul class="nav navbar-right">
+        <li>
+            <div> <a class="nav-link" routerLink= "/" (click)="this.Logout()">Logout</a></div>
+        </li>
+    </ul>
+     
+   </nav> 
+</div>
+
+<div *ngIf="this.AuthService.isAdmin()">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" routerLink ="/home">Shiksha</a>
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a class = "nav-link" routerLink ="/home">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Modules
+        </a> 
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink ="/admin/modules/managesubjects">Manage Subjects</a>
+          <a class="dropdown-item" routerLink ="/admin/modules/addsubject">Add Subject</a>
+        </div>
+      </li> 
+      <li class="active">
+        <a class = "nav-link" routerLink ="/admin/users">Users</a>
+      </li> 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Exams
+        </a> 
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink ="/admin/exam/results">Results</a>
+          <a class="dropdown-item" routerLink ="/admin/exam">Paper format</a>
+          <a class="dropdown-item" routerLink ="/admin/exam/reviewpaper">Review Paper</a>                  
+        </div>
+      </li>
+      <li class="active">
+        <a class = "nav-link" routerLink ="/admin/feedback">Feedback</a>
+      </li>
+      <li class="active">
+        <a class = "nav-link" routerLink ="/admin/manageprofile">Manage Profile</a>
+      </li>
+      <li class="active">
+        <a class = "nav-link" routerLink ="/register">Add Admin</a>
+      </li>  
+    </ul> 
+    <ul style="padding-left: 532px;">
+      <div>
+       <img src="assets/images/avt1.jpg" alt="Avatar" class="avatar" >
+      </div>
+    </ul>
+    <ul class="nav navbar-right">
+        <li>
+            <a class="nav-link" routerLink="/login" (click)="this.AuthService.Logout()">Logout</a>
+        </li>
+    </ul>
+    
+ 
+  </nav> 
+
+
+</div>
+
+<router-outlet></router-outlet><br><br>
+
+<div class="footer bg-dark">
+    <div class="footer-copyright text-center py-2">© 2020 Copyright
+      <a routerLink="/home">Shiksha.kdac.org</a>
+    </div> 
+</div>
+
+
+
+
+
+ 

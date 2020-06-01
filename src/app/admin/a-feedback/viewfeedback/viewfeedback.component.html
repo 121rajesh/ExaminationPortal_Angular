@@ -1,0 +1,28 @@
+
+  
+<br><br><br><br>
+
+<div class="bg-img">
+  <h1>View feedback of particular user</h1>
+      <div class="content" *ngFor="let users of userData">
+   
+        <div *ngIf="users.fdbkId == this.fid ">
+              <table style="width: 30%;">
+                  <tr>
+                      <td>User Name</td>
+                      <td>{{users.name}}</td>
+                  </tr>
+                  <tr>
+                      <td>Email</td>
+                      <td>{{users.emailId}}</td>
+                  </tr>
+              </table>
+              <div>
+                {{users.message}}
+              </div>
+            </div><br>
+          
+      </div>
+
+
+</div>

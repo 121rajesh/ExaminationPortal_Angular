@@ -1,0 +1,46 @@
+<br><br><br><br>
+
+<h2>Exam Started</h2>
+
+<div style="padding-left: 80%;" >
+    <span id="timer"></span>
+</div>
+
+<div align="center" style="height: 100%; width:90%;padding-left: 100px;" >
+    <br><br>
+   <form #myForm="ngForm" (ngSubmit)="answers(myForm)">
+    <table border="1" class="table table-striped table-hover">
+        <tbody  >
+            <ng-container *ngFor="let q of SubPaper;index as i">
+                <tr >
+                    <td colspan="2">
+                        {{i+1}}).{{q.question}}
+                    </td>              
+                </tr> 
+                <tr>
+                     <td>
+                        <input type="radio" ngModel name="{{q.queId}}" value="opt1"> A) {{q.opt1}}<br>
+                        <input type="radio" ngModel name="{{q.queId}}" value="opt2"> B) {{q.opt2}}<br>
+                        <input type="radio" ngModel name="{{q.queId}}" value="opt3"> C) {{q.opt3}}<br>
+                        <input type="radio" ngModel name="{{q.queId}}" value="opt4"> D) {{q.opt4}}
+                        
+                    </td> 
+                </tr>
+            </ng-container>
+            <tr>
+                <td colspan="2" align="center">
+                   <button id="btnSubmit" type="submit" class="btn btn-large btn-block btn-success" style="width: 100px;">Submit</button>
+               </td>
+            </tr>
+        </tbody>
+
+             <!-- <tr>
+                 <td colspan="2" align="center">
+                    <button type="submit" class="btn btn-large btn-block btn-success" style="width: 100px;">Submit</button>
+                </td>
+             </tr> -->
+    </table>
+   </form>
+    
+</div>
+

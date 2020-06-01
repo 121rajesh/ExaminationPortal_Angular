@@ -1,0 +1,99 @@
+
+  <!-- <div *ngIf="this.authService.isLoggedIn()">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <a class="navbar-brand" routerLink ="/home">Shiksha</a>
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a class = "nav-link" routerLink ="/admin/dashboard">DashBoard</a>
+        </li>
+        <li class="active">
+          <a class = "nav-link" routerLink ="/home">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Modules
+          </a> 
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink ="/admin/modules/managesubjects">Manage Subjects</a>
+            <a class="dropdown-item" routerLink ="/admin/modules/addsubject">Add Subject</a>
+          </div>
+        </li>  
+        <li class="active">
+          <a class = "nav-link" routerLink ="/admin/users">Users</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Exams
+          </a> 
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink ="/admin/exam/results">Results</a>
+            </div>
+        </li>
+        <li class="active">
+          <a class = "nav-link" routerLink ="/admin/feedback">Feedback</a>
+        </li>
+        <li class="active">
+          <a class = "nav-link" routerLink ="/admin/manageprofile">Manage Profile</a>
+        </li> 
+      </ul> 
+      <ul style="padding-left: 532px;">
+        <div>
+         <img src="assets/images/avt1.jpg" alt="Avatar" class="avatar" >
+        </div>
+      </ul>
+      <ul class="nav navbar-right">
+          <li>
+              <a class="nav-link" routerLink="/login">Logout</a>
+          </li>
+      </ul>
+      
+   
+    </nav> 
+   -->
+  <br><br><br><br>
+   
+  <div  >
+        <h1>List of Users</h1>
+            <div class="content">
+              <!-- <table style="text-align: center; width: 100%;" >
+                <tr style="font-size:x-large;">
+                  <td>Name</td>
+                  <td>Email</td>
+                  <td colspan="2" style="text-align: center;">Status</td>
+                </tr><br>
+                <tr *ngFor="let users of userData">
+                  <td>{{users.Name}}</td>
+                  <td>{{users.EmailId}}</td>
+                  <td>Active</td>
+                  <td><a routerLink="/admin/users/manageusers">Manage</a></td>
+                </tr> 
+                    
+              </table> -->
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let users of userData">
+                    
+                    <td>{{users.name}}</td>
+                    <td>{{users.emailId}}</td>
+                    <td *ngIf="!users.isLocked">Active</td>
+                    <td *ngIf="users.isLocked">InActive</td>
+                    <td *ngIf="!users.isLocked"><button class="btn btn-danger" (click)="manageUser(users)" >Delete</button></td>
+                    <td *ngIf="users.isLocked"><button class="btn btn-success" (click)="manageUser(users)" >Activate</button></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+  
+    
+  </div>
+  
+  <!-- </div> -->

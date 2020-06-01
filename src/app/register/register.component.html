@@ -1,0 +1,89 @@
+<br><br><br>
+
+
+<div class="bg-img">
+
+  <div class="content">
+      <h1>Register Here</h1>
+        <h2>It's free</h2>
+  </div>
+
+
+
+<!-- <div class="model-content"> -->
+  <div class="content1" style="color:white;">
+        
+     <form #myFrom ="ngForm" (ngSubmit)="register(myFrom)"> 
+        <label for="name"><b>Name</b></label>
+        <input ngModel type="text" placeholder="Enter name" name="name" required class="form-control" >
+    
+        <label for="emailId"><b>Email</b></label>
+        <input ngModel type="email" placeholder="example@gmail.com" name="emailId" required class="form-control" >
+        
+        <label for="mobile"><b>Mobile No</b></label>
+        <input ngModel type="text" placeholder="1234567890" name="mobile" required="required" class="form-control" >
+    
+        <!-- <label for="Password"><b>Password</b></label>
+        <input ngModel type="password" name="Password" required="required" class="form-control" > -->
+        <label for="password"><b>Password</b></label>
+              <input  type="password" ngModel placeholder="Enter Password" id="password" required minlength="4" maxlength="10"  name="password" #password="ngModel" #spy class="form-control" >
+                <br>
+                <div *ngIf="password.invalid && (password.dirty || password.touched || password.pristine)" class="alert alert-danger">
+          <div *ngIf="password.errors.required">
+              Password is required.
+          </div>
+          <div *ngIf="password.errors.minlength">
+              Password must be at least 4 characters long.
+          </div>
+      </div>
+        <label for="cnfPassword"><b>Confirm Password</b></label>
+        <input ngModel type="password" name="cnfPassword" required="required" class="form-control" >
+        <!-- <label for="RoleId"><b>Role</b></label>
+        <input ngModel type="text" name="RoleId" placeholder="eg., user" required="required" class="form-control" > <br>      -->
+        
+        <button type="submit" class="btn btn-success">Sign Up</button>&nbsp;&nbsp;
+        <button type="button" routerLink="/home" class="btn btn-danger">Cancel</button>
+        
+      
+          <span>
+              {{message}}
+          </span>
+</form>
+
+    </div>
+
+  </div>
+
+
+    <!--
+
+     <div class="container" style="padding-right: 55%;"></div>
+
+      <form #myFrom ="ngForm" (ngSubmit)="register(myFrom)" class="container"> 
+        <label for="Name"><b>Name</b></label>
+        <input ngModel type="text" placeholder="Enter name" name="Name" required class="form-control">
+    
+        <label for="EmailId"><b>Email</b></label>
+        <input ngModel type="email" placeholder="example@gmail.com" name="EmailId" required class="form-control">
+        
+        <label for="MobileNo"><b>Mobile No</b></label>
+        <input ngModel type="text" placeholder="1234567890" name="MobileNo" required class="form-control">
+    
+        <label for="Password"><b>Password</b></label>
+        <input ngModel type="password" name="Password" required class="form-control">
+      
+        <label for="RoleId"><b>Role</b></label>
+        <input ngModel type="text" name="RoleId" placeholder="eg., user" required class="form-control">      
+        
+        <button type="submit" class="btn btn-success">Sign Up</button>&nbsp;&nbsp;
+        <button type="button" class="btn btn-danger">Cancel</button>
+        
+      
+          <span>
+              {{message}}
+          </span>
+</form>
+
+
+
+    -->

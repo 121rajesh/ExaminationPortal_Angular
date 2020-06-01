@@ -1,0 +1,26 @@
+
+  
+<br><br><br><br>
+
+<div class="bg-img">
+  <h1>Admin's feedback page</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Feedbacks</th>
+              <!-- <th>Action</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let users of userData" routerLink="/admin/feedback/viewfb/{{users.fdbkId}}" >
+              <td *ngIf="!users.isLocked">{{users.name}}</td>
+              <td *ngIf="!users.isLocked">{{users.emailId}}</td>
+              <td *ngIf="!users.isLocked"><a routerLink="/admin/feedback/viewfb/{{users.fdbkId}}">View Feedback</a></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+

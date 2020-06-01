@@ -1,0 +1,199 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:slategrey;
+    color: white;
+    text-align: center;
+    height: 45px;
+  }
+  
+  
+  .avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  } 
+  
+
+/* css for bg image */
+
+
+.container {
+  position: absolute;
+   right: 0;
+   bottom: 20px;
+  margin: 20px;
+  max-width: 500px;
+  padding: 16px; 
+   right: 0;
+  margin: 50px;
+  max-width: 300px;
+  padding: 25px; 
+  /*background-color: whitesmoke;*/
+}
+
+.poco {
+  position: absolute;
+   right: 0;
+  margin: 20px;
+  max-width: 500px;
+  padding: 16px; 
+   right: 0;
+  margin: 50px;
+  max-width: 300px;
+  padding: 25px; 
+  /*background-color: whitesmoke;*/
+}
+  
+.bg-img {
+  /* The image used */
+  background-image: url("/assets/images/a.jpg");
+  background-size: cover;
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
+
+  /* Control the height of the image */
+    min-height: 540px;   
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+  
+.bg-img .content {
+  position: absolute; /* Position the background text */
+  /*bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  top: 70px; 
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  width: 80%; /* Full width */
+  padding: 20px; /* Some padding */
+  left: 5%;
+}
+/* <img src="assets/images/pen1.jpg" alt="Notebook" style="width: 100%;"> */
+
+
+  /* css for dropdown  */ 
+  
+  .dropdown:hover>.dropdown-menu {
+  display: block;
+  }
+  .bg-color{
+    background-color:green;
+  } 
+  .navbar-brand{
+   /* font-style:bold;*/
+    /*font-size:30px;*/
+  }
+  .navbar{
+   /* height:50px;*/
+   /* left:54px;*/
+  }
+  .sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 50px; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+  color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+  transition: margin-left .5s;
+  padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+  }
+  #menu{
+    background-color:green;
+    height:50px;
+    position:absolute;
+    left:0px;
+  }
+  /* .btn{
+    background-color: #111;
+    color:White;
+    height:100px;
+    width:100px;
+    position :absolute;
+    left:30%;
+    top:40px;
+    padding:0px;
+    margin:0px;
+    border:0px;
+  } */
+  .btn1{
+    background-color: #111;
+    color:White;
+    height:100px;
+    width:100px;
+    position :absolute;
+    top:130px;
+    left:30%;
+    padding:0px;
+    margin:0px;
+    border:0px;
+  }  
+  .btn2{
+    background-color: #111;
+    color:White;
+    height:100px;
+    width:100px;
+    position :absolute;
+    top:220px;
+    left:30%;
+    padding:0px;
+    margin:0px;
+    border:0px;
+  }
+  
+  .vertical { 
+            border-left: 2px solid black; 
+            height: 50px; 
+            position:absolute; 
+            top:0px;
+            left:190px;
+        } 
+        .fas{
+            margin-left:50px;
+        }
+      

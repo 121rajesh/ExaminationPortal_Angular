@@ -1,0 +1,60 @@
+<br>
+<br>
+<br>
+
+<div *ngIf="!this.auth_service.isLoggedIn()">
+  <div class="bg-img">
+
+    <div class="content">
+        <h1>Login Now</h1>
+          <h2>and Experience the Truth</h2>
+    </div>
+    
+    
+    
+      <div class="box  " *ngIf="!this.auth_service.isLoggedIn()"> 
+        
+        <form #myForm="ngForm" (ngSubmit)="Validation(myForm.value)" class="container">
+          
+            <div class="container" style=" color:black">
+              <label  for="emailId"><b>Username</b></label>
+              <input class="form-control" ngModel type="email" placeholder="Enter Email id" id="emailId" required email  name="emailId" #EmailId="ngModel" #spy>
+                <br>
+                
+                <div *ngIf="EmailId.invalid && (EmailId.dirty)" class="alert alert-danger">
+                  <div *ngIf="EmailId.errors.required">
+                      Email id is required.
+                  </div>
+                  <div *ngIf="EmailId.errors.email">
+                      Email Id must be valid. 
+                  </div>
+              </div>
+              <label for="password"><b>Password</b></label>
+              <input  type="password" ngModel placeholder="Enter Password" id="password" required minlength="4" maxlength="10"  name="password" #Password="ngModel" #spy class="form-control" >
+                <br>
+                <div *ngIf="Password.invalid && (Password.dirty )" class="alert alert-danger">
+          <div *ngIf="Password.errors.required">
+              Password is required.
+          </div>
+          <div *ngIf="Password.errors.minlength">
+              Password must be at least 4 characters long.
+          </div>
+      </div>
+              <button type="submit" class="btn btn-success">Login</button>
+              <label style="color: white;">   
+                &nbsp;&nbsp; <a routerLink="/forgotpassword"><b style="color: rgb(62, 81, 185);">Forgotpassword</b></a>
+              </label><br>
+              <label style="color: white;">   
+                <b>New here?</b>&nbsp;&nbsp; <a routerLink="/register"><b style="color: rgb(62, 81, 185);">Register</b></a>
+              </label>
+                <span>
+                  <b style="color: white;">{{msg}}</b>
+                </span>            
+            </div>
+          </form>
+  
+    </div> 
+    
+    </div>
+</div>
+  

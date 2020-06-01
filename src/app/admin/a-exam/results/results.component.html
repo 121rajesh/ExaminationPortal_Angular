@@ -1,0 +1,50 @@
+
+  
+<br><br><br><br>
+
+<!-- <div class="bg-img"> -->
+      <h1>Exam Results of all Users</h1>
+          <!-- <div class="content"> -->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th >Name</th>
+                  <th>Email</th>
+                  <th>Subject</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let users of resultData"  >
+                  <td *ngIf="!users.isLocked" >{{users.name}}</td>
+                  <td *ngIf="!users.isLocked">{{users.emailId}}</td>
+                  <td *ngIf="!users.isLocked">{{users.subName}}</td>
+                  <td *ngIf="!users.isLocked">{{users.score}}</td>  
+                    <!-- <td *ngIf="!users.T_Users.IsLocked"><a routerLink="/admin/feedback/viewfb/{{users.FId}}">View Feedback</a></td> -->
+                </tr>
+                
+              </tbody>
+            </table>
+            <!-- <table style="text-align: center; width: 100%;">
+              <tr style="font-size:x-large;">
+                <td>Name</td>
+                <td>Email</td>
+                <td>Subject</td>
+                <td>Score</td>
+                <td>Time Taken(mm:ss)</td>
+              </tr><br>
+              <tr>
+                <td>shrey1</td>
+                <td>shrey@123</td>
+                <td>C Language</td>
+                <td>12</td>
+                <td>5.43</td>
+              </tr> 
+                      
+            </table>  -->
+          <!-- </div> -->
+
+  
+<!-- </div> -->
+
+ 

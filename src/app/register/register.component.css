@@ -1,0 +1,86 @@
+
+/* .container {
+    position: relative;
+    max-width: 100%; /* Maximum width */
+ /*   margin: 0 auto; /* Center it */
+  /*}*/
+ /*  .container .content {
+    position: absolute; /* Position the background text */
+    /*bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+ /*   top: 100px;
+    background: rgb(0, 0, 0); /* Fallback color */
+/*    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+/*    color: #f1f1f1; /* Grey text */
+ /*   width: 100%; /* Full width */
+ /*   padding: 20px; /* Some padding */
+ /* } */
+
+ .container1 {
+    position: absolute;
+     right: 0;
+     top: 80px;
+     right: 120px;
+   /*  bottom: 5px;*/ 
+    margin: 20px;
+    max-width: 800px;
+    padding: 16px; 
+     /* right: 0;
+    margin: 50px;
+    max-width: 300px;
+    padding: 25px;  */
+   /* background-color: whitesmoke;*/
+  }
+
+.poco {
+    position: absolute;
+     right: 0;
+    margin: 20px;
+    max-width: 500px;
+    padding: 16px; 
+     right: 0;
+    margin: 50px;
+    max-width: 300px;
+    padding: 25px; 
+    /*background-color: whitesmoke;*/
+  }
+
+  .bg-img {
+    /* The image used */
+    background-image: url("/assets/images/pen1.jpg");
+    background-size: cover;
+    /* filter: blur(8px);
+    -webkit-filter: blur(8px); */
+
+    /* Control the height of the image */
+      min-height: 540px;   
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; 
+  }
+
+  .bg-img .content {
+    position: absolute; /* Position the background text */
+    /*bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    top: 100px;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 42%; /* Full width */
+    padding: 20px; /* Some padding */
+  }
+
+  .bg-img .content1 {
+    position: absolute; /* Position the background text */
+    /*bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    top: 30px;
+    left: 850px;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 375px; /* Full width */
+    padding: 20px; /* Some padding */
+  }
+/* <img src="assets/images/pen1.jpg" alt="Notebook" style="width: 100%;"> */
