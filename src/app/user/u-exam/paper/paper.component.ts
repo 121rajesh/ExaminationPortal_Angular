@@ -19,32 +19,50 @@ export class PaperComponent implements OnInit {
   SubPaper:any
   timer:any=10;
   time:any;
-  button:any;
+  // button:any;
   // scorearray: { "UserId": string; "SubId": any; "CntCorrectAns": any; };
   constructor(public service:DataService,public route:ActivatedRoute,public router:Router ,public elementRef:ElementRef) {
-    
-    var countDownTime = 10*60*1000;
-    
-    this.time=this.elementRef.nativeElement.querySelector('#timer');  
-    this.button=this.elementRef.nativeElement.querySelector('#btnSubmit');
-    const interval = setInterval( function(){
-
-        var min = Math.floor((countDownTime%(1000*60*60))/(60*1000));
-        var sec = Math.floor((countDownTime)%(1000*60)/(1000));
-        countDownTime-=1000;
-        if(this.time!==undefined)
-        this.time.textContent="Time remaining : "+min+" m "+sec+" s";  
-      
-        if(countDownTime<0)
-        {
-            clearInterval(interval);
-            this.time.textContent="Time remaining : "+" 00 m 00s";
-            alert("Your exam is auto submitted !!")
-            this.button.click();
-        }
-    },1000);
+   
    }
 
+   //-------------------------------
+   startTimer() {
+    let vm = this;
+    function countdown(minutes) {
+      // alert(minutes)
+      var seconds = 60;
+      var mins = minutes;
+      function tick() {
+        var counter = document.getElementById("timer");
+        var button = document.getElementById("btnSubmit");
+        var currentMinutes = mins - 1;
+        seconds--;
+        counter.innerHTML =
+          "Exam will END in " +
+          currentMinutes.toString() +
+          ":" +
+          (seconds < 10 ? "0" : "") +
+          String(seconds);
+        if (seconds > 0) {
+          setTimeout(tick, 1000);
+        } else {
+          if (mins > 1) {
+            // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
+            setTimeout(function() {
+              countdown(mins - 1);
+            }, 1000);
+          } else {
+            
+          alert("Your exam is auto submitted !!")
+          button.click();
+          }
+        }
+      }
+      tick();
+    }
+    countdown(10);// minutes value to be for countdown
+  }
+//-----------------------------
   ngOnInit() 
   {
 
@@ -69,10 +87,10 @@ export class PaperComponent implements OnInit {
       console.log("==========================");
       console.log(this.SubPaper);
       
-      
+        
       console.log(this.SubPaper[0])   
     });
-
+    this.startTimer();
     
 
   }  
